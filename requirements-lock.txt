@@ -1,0 +1,9 @@
+# Versions used to validate this release (Python 3.13, Linux x86_64):
+# all tests pass, including the full-size checks against the archived run.
+llvmlite==0.50.0
+matplotlib==3.11.2
+numba==0.68.0
+numpy==2.5.3
+pyFFTW==0.15.1
+pytest==9.1.1
+scipy==1.18.1

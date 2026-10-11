@@ -1,0 +1,27 @@
+# Quick demonstration (a few minutes on a laptop): the reproducible-run
+# parameters on the 160 x 160 corner (80 nm) of the archived microstructure,
+# 2000 steps (reaches ~450 K, ~5 min on 4 cores). Precipitates lying outside
+# the box are simply not drawn.
+
+[grid]
+nx = 160
+ny = 160
+nz = 1
+dx = 0.5e-9
+
+[heat_treatment]
+schedule_time = [0, 1350]
+schedule_temperature = [400, 850]
+
+[microstructure]
+precipitates = "../data/inputs/micro_final.npz"
+
+[material]
+material_tables = "../data/inputs/final_export.npz"
+c_eps0 = 0.25
+c_Meta = 0.6
+
+[output]
+n_steps = 2000
+n_map_saves = 10
+n_surface_samples = 100

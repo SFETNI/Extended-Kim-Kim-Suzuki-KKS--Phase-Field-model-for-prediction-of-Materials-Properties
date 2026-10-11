@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use this software or its data, please cite the article below."
+title: "Extended Kim-Kim-Suzuki (KKS) phase-field model for the prediction of the microstructure evolution of LPBF AlSi10Mg"
+authors:
+  - family-names: Fetni
+    given-names: Seifallah
+  - family-names: Delahaye
+    given-names: Jocelyn
+license: Apache-2.0
+repository-code: "https://github.com/SFETNI/Extended-Kim-Kim-Suzuki-KKS--Phase-Field-model-for-prediction-of-Materials-Properties"
+preferred-citation:
+  type: article
+  title: "Extension of a phase-field KKS model to predict the microstructure evolution in LPBF AlSi10Mg alloy submitted to non isothermal processes"
+  authors:
+    - family-names: Fetni
+      given-names: Seifallah
+    - family-names: Delahaye
+      given-names: Jocelyn
+    - family-names: Sepúlveda
+      given-names: Héctor
+    - family-names: Duchêne
+      given-names: Laurent
+    - family-names: Habraken
+      given-names: Anne Marie
+    - family-names: Mertens
+      given-names: Anne
+  journal: "Computational Materials Science"
+  volume: 244
+  start: 113197
+  year: 2024
+  issn: "0927-0256"
+  doi: "10.1016/j.commatsci.2024.113197"
+  url: "https://www.sciencedirect.com/science/article/abs/pii/S092702562400418X"
+references:
+  - type: data
+    title: "Extended KKS phase-field model of Si precipitation in LPBF AlSi10Mg — simulation data"
+    authors:
+      - family-names: Fetni
+        given-names: Seifallah
+    version: "1.0"
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: "10.5281/zenodo.23300608"
+    url: "https://doi.org/10.5281/zenodo.23300608"
