@@ -1,0 +1,57 @@
+# Reproducible run archived in ReproducibleRun.zip (NIC5 cluster, Nov 2022):
+# 735 x 735 grid (367.5 nm), 73 precipitates, linear heating 400 -> 850 K at
+# 20 K/min, 30 000 steps (~40 h on one node; reached 722.6 K).
+# Every value below is taken from legacy_version/ReproducibleRun/main_RVE_cell.py
+# and pyFi_adapt.py. tests/test_archived_run.py checks the first step against
+# the archived map.
+
+[grid]
+nx = 735
+ny = 735
+nz = 1
+dx = 0.5e-9                      # [m]
+
+[heat_treatment]
+schedule_time = [0, 1350]        # [s] = 3 * (850 - 400): 20 K/min
+schedule_temperature = [400, 850]  # [K]
+
+[microstructure]
+precipitates = "../data/inputs/micro_final.npz"
+x_matrix = 0.025
+x_precipitate = 0.99999
+x_equilibrium = 0.025
+
+[material]
+material_tables = "../data/inputs/final_export.npz"
+c_gamma = 1.0                    # interface-energy factor
+c_eps0 = 0.25                    # misfit-strain factor
+c_D = 1.0                        # diffusivity factor (D0, QD from the tables)
+c_Meta = 0.6                     # interface-mobility factor
+Meta0 = 5.60e-8
+QMeta = 1.10e5                   # [J/mol]
+alpha = 2.2
+half_width_cells = 2.5           # lambda = 2.5 dx
+
+[vacancies]
+T_quench = 850                   # [K]
+vacancy_sink_distance = 250e-9   # [m]
+diffusion_enhancement_cap = 1e9
+
+[time_stepping]
+dtime_s = 75
+dtime_max = 400
+dtime_min_divisor = 1000         # 20 in the save_ipynb/ and top-level copies of pyFi_adapt.py
+residual_max = 1e-1
+residual_min = 1e-4
+step_factor = 1.25
+max_iterations = 50
+good_step_offset = 0
+
+[output]
+n_steps = 30000
+n_map_saves = 40
+n_surface_samples = 500
+
+[fft]
+fft_backend = "auto"
+fft_threads = 12
